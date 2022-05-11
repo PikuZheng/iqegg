@@ -50,23 +50,23 @@ echo "</body></html>";
 
 //运行状态
 function calcstatus($range) {
-if ($range=0){return "关闭";}
-if ($range=1){return "一档";}
-if ($range=2){return "二档";}
-if ($range=3){return "三档";}
-if ($range=4){return "四档";}
-if ($range=5){return "飓风（噪音注意）";}
+if ($range==0){return "关闭";}
+if ($range==1){return "一档";}
+if ($range==2){return "二档";}
+if ($range==3){return "三档";}
+if ($range==4){return "四档";}
+if ($range==5){return "飓风（噪音注意）";}
 }
 
 function favorstatus($favor){
-if ($favor=0){return "安静（不会超过三档风速运行";}
-if ($favor=1){return "平衡（寻求净化速度与噪音间的平衡";}
-if ($favor=2){return "高效（以最快速度净化空气为原则运行";}
+if ($favor==1){return "安静（不会超过三档风速运行";}
+if ($favor==2){return "平衡（寻求净化速度与噪音间的平衡";}
+if ($favor==3){return "高效（以最快速度净化空气为原则运行";}
 }
 
 function powermode($mode){
-if ($mode=1){return "在待机、自动模式和手动模式（一至五档）间切换";}
-if ($mode=0){return "在待机与自动模式间切换";}
+if ($mode==0){return "在待机、自动模式和手动模式（一至五档）间切换";}
+if ($mode==1){return "在待机与自动模式间切换";}
 }
 
 
