@@ -70,7 +70,7 @@ switch($_GET['a'])
     echo '{"result":"0","message":"ok","content":""}';
     die;
   case 'power_light': //光线变暗时关闭电源灯
-    sendmqtt($_POST['devid'], 'powerlight', $_v[$_POST['operate']]?0:1 );
+    sendmqtt($_POST['devid'], 'powerlight', $_v[$_POST['operate']] );
     echo '{"result":"0","message":"ok","content":""}';
     die;
 
@@ -88,7 +88,7 @@ switch($_GET['a'])
     die;
 
   case 'get_status_sys': //当前设置查询
-    echo '{"result":"0","message":"ok","content":{"auto_sleep":'.$st['auto_sleep'].',"firmware_version":'.$st['fwver'].',"is_update":0,"isshowctrl":0,"lock_status":'.$_v[$st['lock_status']].',"new_version":0,"night_light_model":1,"night_light_status":'.$_v[$st['night_light_status']].',"power_button_mode":'.$st['power_button_mode'].',"power_light":'.$st['powerlight'].',"privctrl":0,"prompt_tone":'.$st['prompt_tone'].',"run_favor":'.$st['run_favor'].',"update_content":"再也不会有更新了"}  }';
+    echo '{"result":"0","message":"ok","content":{"auto_sleep":'.$st['auto_sleep'].',"firmware_version":'.$st['fwver'].',"is_update":0,"isshowctrl":0,"lock_status":'.$_v[$st['lock_status']].',"new_version":0,"night_light_model":1,"night_light_status":'.$_v[$st['night_light_status']].',"power_button_mode":'.$st['power_button_mode'].',"power_light":'.$st['powerlight']?0:1.',"privctrl":0,"prompt_tone":'.$st['prompt_tone'].',"run_favor":'.$st['run_favor'].',"update_content":"再也不会有更新了"}  }';
     die;
 
   case 'login': //不登陆就不让用 登啥都成功
