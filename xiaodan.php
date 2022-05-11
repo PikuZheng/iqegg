@@ -36,7 +36,7 @@ echo "<tr><td style='border-bottom:3px solid #ccc'>uv_status</td><td style='bord
 echo "<tr><td>lock_status</td><td>电源按键锁定状态</td><td>".$st["lock_status"]."</td></tr>";
 echo "<tr><td>auto_sleep</td><td>光线变暗时自动进入睡眠模式</td><td>".$st["auto_sleep"]."</td></tr>";
 echo "<tr><td>prompt_tone</td><td>操作提示音</td><td>".$st["prompt_tone"]."</td></tr>";
-echo "<tr><td>powerlight</td><td>光线变暗时关闭电源指示灯</td><td>".$st["powerlight"]."（0表示不关，1表示关）</td></tr>";
+echo "<tr><td>powerlight</td><td>光线变暗时关闭电源指示灯</td><td>".$st["powerlight"]."（0表示关，1表示不关）</td></tr>";
 echo "<tr><td>run_favor</td><td>自动模式运行偏好</td><td>". favorstatus($st["run_favor"])."</td></tr>";
 echo "<tr><td>night_light_status</td><td>环形灯状态</td><td>".$st["night_light_status"]."</td></tr>";
 echo "<tr><td style='border-bottom:3px solid #ccc'>power_button_mode</td><td style='border-bottom:3px solid #ccc'>电源键功能</td><td style='border-bottom:3px solid #ccc'>".powermode($st["power_button_mode"])."</td></tr>";
