@@ -88,7 +88,8 @@ switch($_GET['a'])
     die;
 
   case 'get_status_sys': //当前设置查询
-    echo '{"result":"0","message":"ok","content":{"auto_sleep":'.$st['auto_sleep'].',"firmware_version":'.$st['fwver'].',"is_update":0,"isshowctrl":0,"lock_status":'.$_v[$st['lock_status']].',"new_version":0,"night_light_model":1,"night_light_status":'.$_v[$st['night_light_status']].',"power_button_mode":'.$st['power_button_mode'].',"power_light":'.$st['powerlight']?0:1.',"privctrl":0,"prompt_tone":'.$st['prompt_tone'].',"run_favor":'.$st['run_favor'].',"update_content":"再也不会有更新了"}  }';
+    $powerlight=$st['powerlight']?0:1; //在app呈现上电源灯开关是反的
+    echo '{"result":"0","message":"ok","content":{"auto_sleep":'.$st['auto_sleep'].',"firmware_version":'.$st['fwver'].',"is_update":0,"isshowctrl":0,"lock_status":'.$_v[$st['lock_status']].',"new_version":0,"night_light_model":1,"night_light_status":'.$_v[$st['night_light_status']].',"power_button_mode":'.$st['power_button_mode'].',"power_light":'.$powerlight.',"privctrl":0,"prompt_tone":'.$st['prompt_tone'].',"run_favor":'.$st['run_favor'].',"update_content":"再也不会有更新了"}  }';
     die;
 
   case 'login': //不登陆就不让用 登啥都成功
@@ -105,7 +106,7 @@ switch($_GET['a'])
 
 function sendmqtt($devid,$key,$value)
 {
-  $mqttserver="http://11.20.3.171:8081/api/v4/mqtt/publish";
+  $mqttserver="http://mqttserver:8081/api/v4/mqtt/publish";
   $mqttuser="admin";
   $mqttpass="public";
 
